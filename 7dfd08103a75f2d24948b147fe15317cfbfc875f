@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_f978abfa",
+        "filename": "src/org/cyanogenmod/hardware/util/FileUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2013-08-19T12:46:15Z",
+      "side": 1,
+      "message": "wat",
+      "revId": "7dfd08103a75f2d24948b147fe15317cfbfc875f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
