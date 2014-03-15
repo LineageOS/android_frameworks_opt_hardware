@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_ed0300b7",
+        "filename": "src/org/cyanogenmod/hardware/AdvancedTouchInput.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2014-03-15T13:47:16Z",
+      "side": 1,
+      "message": "This probably shouldn\u0027t say tap to wake.",
+      "revId": "2d3122f18e432d2a886c20f634e01b344092e08f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
