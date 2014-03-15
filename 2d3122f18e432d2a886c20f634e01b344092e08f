@@ -16,6 +16,24 @@
       "revId": "2d3122f18e432d2a886c20f634e01b344092e08f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_cd46fcbe",
+        "filename": "src/org/cyanogenmod/hardware/AdvancedTouchInput.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 263
+      },
+      "writtenOn": "2014-03-15T20:57:05Z",
+      "side": 1,
+      "message": "Im blind, ill change it in the next patch, thanks",
+      "parentUuid": "bae84128_ed0300b7",
+      "revId": "2d3122f18e432d2a886c20f634e01b344092e08f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
