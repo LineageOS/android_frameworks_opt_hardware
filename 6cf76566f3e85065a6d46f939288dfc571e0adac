@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_81caf99f",
+        "filename": "src/org/cyanogenmod/hardware/HighTouchSensitivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2014-06-08T16:17:41Z",
+      "side": 1,
+      "message": "This is present on other devices as well, http://review.cyanogenmod.org/60933",
+      "revId": "6cf76566f3e85065a6d46f939288dfc571e0adac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
