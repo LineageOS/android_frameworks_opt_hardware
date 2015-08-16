@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_87cb091d",
+        "filename": "src/org/cyanogenmod/hardware/DisplayMode.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-08-16T15:29:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 19,
+        "startChar": 2,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "1be94f3890cb0ed7b775e377a58ccd373eb593eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
