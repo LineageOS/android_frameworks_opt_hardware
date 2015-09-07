@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_f2c5cb5c",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-07T16:34:42Z",
+      "side": 1,
+      "message": "what about throws InvalidArgumentException to let know caller what the call fails?",
+      "range": {
+        "startLine": 65,
+        "startChar": 19,
+        "endLine": 65,
+        "endChar": 23
+      },
+      "revId": "1b87e40fb789d6f8b894166e47cdafe1ed852f22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_d2a08fa8",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-07T16:34:42Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 70,
+        "startChar": 19,
+        "endLine": 70,
+        "endChar": 23
+      },
+      "revId": "1b87e40fb789d6f8b894166e47cdafe1ed852f22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_b2a513b8",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-07T16:34:42Z",
+      "side": 1,
+      "message": "Same here. there are many reasons why this can failed, and no throw and no log that can get an idea of what was wrong.",
+      "range": {
+        "startLine": 118,
+        "startChar": 19,
+        "endLine": 118,
+        "endChar": 24
+      },
+      "revId": "1b87e40fb789d6f8b894166e47cdafe1ed852f22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_32cc6388",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-07T16:34:42Z",
+      "side": 1,
+      "message": "This can be simplified by\n\nfor (byte b : hash) {\n    encoded.append(String.format(\"%02x\", b \u0026 0xff));\n}",
+      "range": {
+        "startLine": 184,
+        "startChar": 12,
+        "endLine": 184,
+        "endChar": 13
+      },
+      "revId": "1b87e40fb789d6f8b894166e47cdafe1ed852f22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
