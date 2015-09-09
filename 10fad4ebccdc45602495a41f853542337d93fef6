@@ -16,6 +16,24 @@
       "revId": "10fad4ebccdc45602495a41f853542337d93fef6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_e15bb884",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 32
+      },
+      "writtenOn": "2015-09-09T09:57:31Z",
+      "side": 1,
+      "message": "Oh yeah, good catch.",
+      "parentUuid": "3f1d235d_1e061188",
+      "revId": "10fad4ebccdc45602495a41f853542337d93fef6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
