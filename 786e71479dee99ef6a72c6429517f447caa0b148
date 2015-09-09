@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_a10dc03f",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-09T15:58:55Z",
+      "side": 1,
+      "message": "Steve, Rami, IHMO this doesn\u0027t seem a good idea. If for any reason the operation to write the property to the temp file fails, we deleted the original prorperty, which seems to me the wrong behaviour. Just my opinion.",
+      "range": {
+        "startLine": 149,
+        "startChar": 21,
+        "endLine": 149,
+        "endChar": 27
+      },
+      "revId": "786e71479dee99ef6a72c6429517f447caa0b148",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_6107a81e",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-09T15:58:55Z",
+      "side": 1,
+      "message": "IMHO, we can simplified this method a lot by:\n\n- Don\u0027t write to temp file (use in memory buffer)\n- Use FileUtils instead of renameTo (it manages all the delete/write operations with a buffered copy)\n\nI think it can be written as:\n\n    public static boolean set(String key, byte[] buffer) {\n        if (!isSupported() ||\n                key \u003d\u003d null || key.length() \u003e MAX_KEY_LEN ||\n                (buffer !\u003d null \u0026\u0026 buffer.length \u003e MAX_VALUE_LEN)) {\n            return false;\n        }\n\n        final String encodedKey \u003d encode(key);\n        if (encodedKey \u003d\u003d null) {\n            return false;\n        }\n\n        try {\n            rwl.writeLock().lock();\n\n            if (buffer \u003d\u003d null) {\n                if (prop.exists()) {\n                    prop.delete();\n                }\n                return true;\n            }\n            android.os.FileUtils.copyToFile(\n                new java.io.ByteArrayInputStream(buffer),\n                new File(PERSIST_DATA_PATH + \"/\" + encodedKey));\n\n        } catch (Exception e) {\n            Slog.e(TAG, \"Failed to write data to \u0027\" + key +\n                \"\u0027 persistent property\", e);\n            return false;\n\n        } finally {\n            rwl.writeLock().unlock();\n        }\n        return true;\n    }",
+      "range": {
+        "startLine": 166,
+        "startChar": 16,
+        "endLine": 166,
+        "endChar": 24
+      },
+      "revId": "786e71479dee99ef6a72c6429517f447caa0b148",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
