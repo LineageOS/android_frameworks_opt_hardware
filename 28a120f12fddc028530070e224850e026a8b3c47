@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_feed9525",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 11859
+      },
+      "writtenOn": "2015-09-09T00:19:44Z",
+      "side": 1,
+      "message": "Perhaps put this in a finally clause and remove the close() from the try block?",
+      "range": {
+        "startLine": 92,
+        "startChar": 12,
+        "endLine": 98,
+        "endChar": 13
+      },
+      "revId": "28a120f12fddc028530070e224850e026a8b3c47",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_5e5489ca",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 11859
+      },
+      "writtenOn": "2015-09-09T00:19:44Z",
+      "side": 1,
+      "message": "I\u0027d add a note that setting `buffer \u003d\u003d null` is the way to delete a prop.",
+      "revId": "28a120f12fddc028530070e224850e026a8b3c47",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_1e6051a5",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 11859
+      },
+      "writtenOn": "2015-09-09T00:19:44Z",
+      "side": 1,
+      "message": "This can fail if prop already exists and we\u0027d return true (or throw), since we\u0027re deleting the existing one only if `buffer \u003d\u003d null`.",
+      "range": {
+        "startLine": 148,
+        "startChar": 16,
+        "endLine": 148,
+        "endChar": 24
+      },
+      "revId": "28a120f12fddc028530070e224850e026a8b3c47",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
