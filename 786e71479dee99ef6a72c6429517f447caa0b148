@@ -45,6 +45,30 @@
       "revId": "786e71479dee99ef6a72c6429517f447caa0b148",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_6c02ffb6",
+        "filename": "src/org/cyanogenmod/hardware/PersistentStorage.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 11859
+      },
+      "writtenOn": "2015-09-09T22:21:37Z",
+      "side": 1,
+      "message": "I didn\u0027t know about FileUtils. I agree `copyToFile` seems like a nice convenience function that improves the code. \n\nLooking at the source though it also deletes the file first before doing anything else, so I expect its behavior to be no different than what we\u0027re doing here in case of a subsequent error.\n\nI\u0027ll leave it to Steve to make the call.",
+      "parentUuid": "3f1d235d_6107a81e",
+      "range": {
+        "startLine": 166,
+        "startChar": 16,
+        "endLine": 166,
+        "endChar": 24
+      },
+      "revId": "786e71479dee99ef6a72c6429517f447caa0b148",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
