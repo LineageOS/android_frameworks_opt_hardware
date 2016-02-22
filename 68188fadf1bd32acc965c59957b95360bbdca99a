@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_40760e09",
+        "filename": "src/org/cyanogenmod/hardware/SwapButtons.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 12125
+      },
+      "writtenOn": "2016-02-22T01:52:49Z",
+      "side": 1,
+      "message": "Duplicated",
+      "revId": "68188fadf1bd32acc965c59957b95360bbdca99a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
