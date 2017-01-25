@@ -50,10 +50,6 @@ public class DisplayColorCalibration {
         return true;
     }
 
-    public static boolean useGPUMode() {
-        return sUseGPUMode;
-    }
-
     public static int getMaxValue()  {
         return MAX;
     }
