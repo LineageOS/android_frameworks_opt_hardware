@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.hardware;
+package org.lineageos.hardware;
 
 /**
- * Support for displaying a different serial number in Settings -> About Phone
- * than ro.serialno, which may be different than the actual serial number
- * sticker on the hardware.
+ * Generate a unique but deterministic ID for this hardware, based on unchangeable
+ * hardware serial numbers.
  */
-public class SerialNumber {
+public class UniqueDeviceId {
 
     /**
-     * Whether device requires an alternative serial number.
+     * Whether device supports reporting a unique device id.
      *
      * @return boolean Supported devices must return always true
      */
     public static boolean isSupported() { return false; }
 
     /**
-     * Returns the alternative serial number to be displayed.
+     * This method retreives a unique ID for the device.
+     *
+     * @return String The unique device ID
      */
-    public static String getSerialNumber() { return null; }
-
+    public static String getUniqueDeviceId() { return null; }
 }
