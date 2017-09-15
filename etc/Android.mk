@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := org.cyanogenmod.hardware.xml
+LOCAL_MODULE := org.lineageos.hardware.xml
 
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 
