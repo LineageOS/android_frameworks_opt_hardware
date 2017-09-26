@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.hardware;
+package org.lineageos.hardware;
 
 /**
  * Support for displaying a different serial number in Settings -> About Phone

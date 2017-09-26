@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.hardware;
+package org.lineageos.hardware;
 
 import android.annotation.TargetApi;
 import android.util.Range;
 
-import cyanogenmod.hardware.HSIC;
+import lineageos.hardware.HSIC;
 
 /**
  * Picture adjustment support

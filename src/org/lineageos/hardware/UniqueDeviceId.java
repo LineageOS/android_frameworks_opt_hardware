@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.hardware;
+package org.lineageos.hardware;
 
 /**
  * Generate a unique but deterministic ID for this hardware, based on unchangeable

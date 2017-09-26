@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.hardware;
+package org.lineageos.hardware;
 
 /**
  * Touchscreen Hovering

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.hardware;
+package org.lineageos.hardware;
 
 /**
  * Adaptive backlight support (this refers to technologies like NVIDIA SmartDimmer,
