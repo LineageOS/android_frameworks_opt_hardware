@@ -38,6 +38,11 @@ public class DisplayColorCalibration {
 
     private static final int[] sCurColors = new int[] { MAX, MAX, MAX };
 
+    /**
+     * Color transform level used to set color calibration. One level above NightLight/LiveDisplay.
+     */
+    public static final int LEVEL_COLOR_MATRIX_COLOR_CALIBRATION = 101;
+
     static {
         // We can also support GPU transform using RenderEngine. This is not
         // preferred though, as it has a high power cost.
@@ -76,7 +81,19 @@ public class DisplayColorCalibration {
             return FileUtils.writeLine(COLOR_FILE, colors);
         }
 
+        /**
+         * Use the same config that Night Light is using. All HWC2 devices MUST set this
+         */
+        Boolean acceleratedColorTransform = getContext().getResources().getBoolean(
+                com.android.internal.R.bool.config_setColorTransformAccelerated);
+
         float[] mat = toColorMatrix(colors);
+
+        if (acceleratedColorTransform) {
+            float[] rgb = new float[] {mat[0], mat[5], mat[10], mat[15]};
+            DisplayUtils.writeMatrix(rgb, LEVEL_COLOR_MATRIX_COLOR_CALIBRATION);
+            return true;
+        }
 
         // set to null if identity
         if (mat == null ||
