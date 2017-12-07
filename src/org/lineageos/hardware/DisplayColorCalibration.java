@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +17,17 @@
 
 package org.lineageos.hardware;
 
+import android.app.ActivityThread;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.util.Slog;
+
+import com.android.server.LocalServices;
+import com.android.server.display.DisplayTransformManager;
+import static com.android.server.display.DisplayTransformManager.LEVEL_COLOR_MATRIX_NIGHT_DISPLAY;
 
 import org.lineageos.internal.util.FileUtils;
 
@@ -31,6 +37,9 @@ public class DisplayColorCalibration {
 
     private static final String COLOR_FILE = "/sys/class/graphics/fb0/rgb";
 
+    private static final int LEVEL_COLOR_MATRIX_LIVEDISPLAY = LEVEL_COLOR_MATRIX_NIGHT_DISPLAY + 1;
+
+    private static final boolean sUseHWC2ColorTransform;
     private static final boolean sUseGPUMode;
 
     private static final int MIN = 255;
@@ -38,7 +47,13 @@ public class DisplayColorCalibration {
 
     private static final int[] sCurColors = new int[] { MAX, MAX, MAX };
 
+    private static DisplayTransformManager sDTMService;
+
     static {
+        // We use HWC2 color transform if possible.
+        sUseHWC2ColorTransform = ActivityThread.currentApplication().
+                getApplicationContext().getResources().getBoolean(
+                        com.android.internal.R.bool.config_setColorTransformAccelerated);
         // We can also support GPU transform using RenderEngine. This is not
         // preferred though, as it has a high power cost.
         sUseGPUMode = !FileUtils.isFileWritable(COLOR_FILE) ||
@@ -63,7 +78,7 @@ public class DisplayColorCalibration {
     }
 
     public static String getCurColors()  {
-        if (!sUseGPUMode) {
+        if (!sUseGPUMode && !sUseHWC2ColorTransform) {
             return FileUtils.readOneLine(COLOR_FILE);
         }
 
@@ -72,11 +87,23 @@ public class DisplayColorCalibration {
     }
 
     public static boolean setColors(String colors) {
-        if (!sUseGPUMode) {
+        if (!sUseGPUMode && !sUseHWC2ColorTransform) {
             return FileUtils.writeLine(COLOR_FILE, colors);
         }
 
         float[] mat = toColorMatrix(colors);
+
+        if (sUseHWC2ColorTransform) {
+            if (sDTMService == null) {
+                sDTMService = LocalServices.getService(DisplayTransformManager.class);
+                if (sDTMService == null) {
+                    return false;
+                }
+            }
+            float[] rgb = new float[] {mat[0], mat[5], mat[10], mat[15]};
+            sDTMService.setColorMatrix(LEVEL_COLOR_MATRIX_LIVEDISPLAY, mat);
+            return true;
+        }
 
         // set to null if identity
         if (mat == null ||
